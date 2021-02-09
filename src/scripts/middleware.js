@@ -130,3 +130,15 @@ export function* handleTakeEvery(action, saga) {
     yield fork(saga);
   }
 }
+
+// CALL -> Return sagaReturnValue from runSaga
+
+// PUT -> Do runSaga instead of iterateSaga from handlePut. Also check why we delete listning Sagas.
+// export function runSaga(saga, ...arg) {
+//   let sagaInstance = saga(...arg);
+//   if (isIterable(sagaInstance)) {
+//     let sagaName = saga.name;
+//     return iterateSaga(sagaInstance, sagaName);
+//   }
+//   return sagaInstance;
+// }
